@@ -38,7 +38,6 @@ describe ContentBlocks::Snippet do
     @snippet.label = "abc_123_AZ"
     @snippet.should be_valid
     @snippet.label = "1-2-3"
-    #@snippet.should_not be_valid
     @snippet.should have(1).error_on(:label)
   end
 
