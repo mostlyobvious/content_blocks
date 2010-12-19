@@ -15,14 +15,18 @@ Jeweler::Tasks.new do |gem|
   gem.name = "content_blocks"
   gem.homepage = "http://github.com/pawelpacana/content_blocks"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Content parts models for your site.}
+  gem.description = %Q{Content blocks are commonly used models representing editable page partials.}
   gem.email = "pawel.pacana@gmail.com"
   gem.authors = ["Paweł Pacana"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
-  #  gem.add_development_dependency 'rspec', '> 1.2.3'
+  gem.add_runtime_dependency 'aasm', '~> 2.2.0'
+  gem.add_runtime_dependency 'RedCloth', '~> 4.2.3'
+  gem.add_runtime_dependency 'activerecord', '>= 3.0'
+  gem.add_development_dependency 'rspec', '>= 2.1.0'
+  gem.add_development_dependency 'rspec-rails', '>= 2.1.0'
+  gem.add_development_dependency 'sqlite3-ruby'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
