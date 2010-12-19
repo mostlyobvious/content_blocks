@@ -1,1 +1,3 @@
-require 'content_blocks/snippet'
+module ContentBlocks
+  autoload :Snippet, "content_blocks/snippet"
+end
