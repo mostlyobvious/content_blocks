@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "content_blocks.gemspec",
     "lib/content_blocks.rb",
     "lib/content_blocks/snippet.rb",
     "spec/schema/schema.rb",
