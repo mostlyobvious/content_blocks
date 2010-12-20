@@ -1,19 +1,35 @@
-= content_blocks
+= Content Blocks
 
-Description goes here.
+Content Blocks aims to be a tiny set of reusable AR models for site fragments. Currently it consists of only one model: Snippet. The following usage example will tell you more.
 
-== Contributing to content_blocks
+== Installation
+
+As a gem in your Gemfile:
+
+  gem 'content_blocks'
+
+== Usage
+
+Given:
+
+  ContentBlocks::Snippet.create :label => :label_for_snippet, :content => 'h2. Title'
+  ContentBlocks::Snippet[:label_for_snippet].publish!
+
+When:
+
+  <%= ContentBlocks::Snippet[:label_for_snippet].content %>
  
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
-* Fork the project
-* Start a feature/bugfix branch
-* Commit and push until you are happy with your contribution
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+Then it will render textilized content column from Snippet model:
+
+  <h2>Title</h2>
+
+I you'd rather like to access content without textilization, use:
+  
+  <%= ContentBlocks::Snippet[:label_for_snippet].raw_content %>
+
+You can have multiple snippets with the same label, only one can be published at the same time though. Snippets are also automatically created on first access if they don't exist.
 
 == Copyright
 
-Copyright (c) 2010 Paweł Pacana. See LICENSE.txt for
-further details.
+Copyright (c) 2010 Paweł Pacana. Released under MIT license.
 
