@@ -1,4 +1,4 @@
-class ContentBlocksCreateSnippets < ActiveRecord::Migration
+class CreateContentBlocksSnippets < ActiveRecord::Migration
   def self.up
     create_table :content_blocks_snippets, :force => true do |t|
       t.string :label, :null => false
