@@ -1,12 +1,12 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
-describe ContentBlocks::Snippet do
+describe ContentBlocks::Models::Snippet do
   before do
     @valid_attributes = {
       :label => "sidebar",
       :content => "h1. Sidebar links"
     }
-    @snippet = ContentBlocks::Snippet.new(@valid_attributes)
+    @snippet = ContentBlocks::Models::Snippet.new(@valid_attributes)
   end  
 
   it "should be initially draft" do
@@ -16,7 +16,7 @@ describe ContentBlocks::Snippet do
 
   it "should be unique when published" do
     @snippet.save!
-    cloned = ContentBlocks::Snippet.create!(@valid_attributes)
+    cloned = ContentBlocks::Models::Snippet.create!(@valid_attributes)
     @snippet.publish!
     @snippet.should be_valid
     @snippet.published?.should be_true

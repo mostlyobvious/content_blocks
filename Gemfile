@@ -5,6 +5,7 @@ gem "RedCloth"
 gem "aasm"
 
 group :development do
+  gem "rails", "~> 3.0.3"
   gem "rspec-rails", "~> 2.1.0"
   gem "rspec", "~> 2.1.0"
   gem "bundler", "~> 1.0.0"
