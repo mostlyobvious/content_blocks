@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{content_blocks}
-  s.version = "0.2.1"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Pawe\305\202 Pacana"]
-  s.date = %q{2010-12-20}
+  s.date = %q{2010-12-23}
   s.description = %q{Content blocks are commonly used models representing editable page partials.}
   s.email = %q{pawel.pacana@gmail.com}
   s.extra_rdoc_files = [
@@ -27,7 +27,8 @@ Gem::Specification.new do |s|
     "VERSION",
     "content_blocks.gemspec",
     "lib/content_blocks.rb",
-    "lib/content_blocks/snippet.rb",
+    "lib/content_blocks/models/snippet.rb",
+    "lib/content_blocks/railtie.rb",
     "lib/generators/content_blocks/snippet_generator.rb",
     "lib/generators/content_blocks/templates/migration.rb",
     "spec/schema/schema.rb",
@@ -53,6 +54,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<activerecord>, ["~> 3.0.3"])
       s.add_runtime_dependency(%q<RedCloth>, [">= 0"])
       s.add_runtime_dependency(%q<aasm>, [">= 0"])
+      s.add_development_dependency(%q<rails>, ["~> 3.0.3"])
       s.add_development_dependency(%q<rspec-rails>, ["~> 2.1.0"])
       s.add_development_dependency(%q<rspec>, ["~> 2.1.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -69,6 +71,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<activerecord>, ["~> 3.0.3"])
       s.add_dependency(%q<RedCloth>, [">= 0"])
       s.add_dependency(%q<aasm>, [">= 0"])
+      s.add_dependency(%q<rails>, ["~> 3.0.3"])
       s.add_dependency(%q<rspec-rails>, ["~> 2.1.0"])
       s.add_dependency(%q<rspec>, ["~> 2.1.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -86,6 +89,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<activerecord>, ["~> 3.0.3"])
     s.add_dependency(%q<RedCloth>, [">= 0"])
     s.add_dependency(%q<aasm>, [">= 0"])
+    s.add_dependency(%q<rails>, ["~> 3.0.3"])
     s.add_dependency(%q<rspec-rails>, ["~> 2.1.0"])
     s.add_dependency(%q<rspec>, ["~> 2.1.0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
