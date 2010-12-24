@@ -70,4 +70,32 @@ describe ContentBlocks::Models::Snippet do
       @snippet.content.should == "<h1>Sidebar links</h1>"
     end
   end
+
+  context "[]" do
+    it "should create if label doesnt exist" do
+      lambda {
+        ContentBlocks::Models::Snippet[:some_label]
+      }.should change(ContentBlocks::Models::Snippet, :count).by(1)
+    end
+
+    it "should not create if label exists" do
+      @snippet.save!
+      lambda {
+        ContentBlocks::Models::Snippet[@snippet.label]
+      }.should_not change(ContentBlocks::Models::Snippet, :count)
+    end
+
+    it "should return published if more with same label exist" do
+      @snippet.save!
+      ContentBlocks::Models::Snippet[@snippet.label].content.should == @snippet.content
+      new_snippet = @snippet.clone
+      new_snippet.content = "another snippet"
+      new_snippet.save!
+      new_snippet.publish!
+      ContentBlocks::Models::Snippet[@snippet.label].content.should == new_snippet.content
+      new_snippet.preview!
+      @snippet.publish!
+      ContentBlocks::Models::Snippet[@snippet.label].content.should == @snippet.content
+    end
+  end
 end

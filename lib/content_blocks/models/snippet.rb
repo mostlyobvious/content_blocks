@@ -34,7 +34,8 @@ module ContentBlocks
         :uniqueness => { :scope => :status, :if => :published? }
 
       def self.[](label)
-        find_or_create_by_label(label)
+        snippet = published.find_by_label(label)
+        snippet ? snippet : find_or_create_by_label(label)
       end
 
       def content
