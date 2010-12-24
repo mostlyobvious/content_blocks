@@ -2,7 +2,7 @@ require 'rails/generators'
 require 'rails/generators/active_record'
 
 module ContentBlocks
-  class SnippetGenerator < Rails::Generators::Base
+  class NewsArticleGenerator < Rails::Generators::Base
     include Rails::Generators::Migration
     extend ActiveRecord::Generators::Migration
 
@@ -11,7 +11,7 @@ module ContentBlocks
     end
 
     def copy_migration_template
-      migration_template 'snippet_migration.rb', 'db/migrate/create_content_blocks_snippets'
+      migration_template 'news_article_migration.rb', 'db/migrate/create_content_blocks_news_articles'
     end
   end
 end
